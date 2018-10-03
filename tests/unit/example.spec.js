@@ -11,3 +11,10 @@ describe('HelloWorld.vue', () => {
     expect(wrapper.text()).to.include(msg);
   });
 });
+
+describe('HelloWorld.vue', () => {
+  it('should have a prop called name', () => {
+    const wrapper = shallowMount(HelloWorld);
+    expect(wrapper.name()).to.equal('HelloWorld');
+  });
+});
