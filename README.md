@@ -1,4 +1,5 @@
-# wiertar.github.io
+# wiertar.github.io [![Build Status](https://travis-ci.com/wiertar/wiertar.github.io.svg?branch=master)](https://travis-ci.com/wiertar/wiertar.github.io)
+
 
 ## Project setup
 ```
