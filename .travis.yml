@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- stable
+  - stable
 script:
-- npm test
+  - npm test
 after_success:
-- bash ./deploy.sh
+  - bash ./deploy.sh
 env:
   secure: qCIzYjuqITvExOAgAoJoD94q7yE2QlgUQ1BlaJ2lZJq4a/8T+jYoJFrNl5V9rsG4guY7VAPA20zztRPFvJWLuxqYMuYIUMR1R5d+CNODk6/W1059i6PntNiAzC9xABcKqw7cf+xaM7pjoWVMbTRfdGQcU7YHwIChb6r5n3x1u9e7s92QduBAzHPfPF0WsYMpOatjY2yX0Ac8L2QZYogTodgJ6/xyfIMyAYTAukTJFPGqA4uWCdaQbfetyLazkE2spCA5jFscHxVham0Z7aSN3S5427pe8eDIPvBotcAEb1X1rG3/fNgEbRDWeTCU0UGQMeq1J6FpivtaT2tURZ2prOQgLmOOs03FagwIHb9BNcsAwcq3I0XKxZRNhfe11WRzfiVuG8gNtq5lg2srUAFYdJmiwSQr7JKrQ7J6+wTNtzK3LbSZcdC2j+itPbR+B6n/cEMyeBjuqzrtHfLIGYSfZoao9JEu39IvIV77ip2L8O+YB5WDtZ3h7Cfe43s/zfFIz9sQSTg4AJuXTxygdbrvgBvZDH0GKm9k1k/XxUSzeUKXdt95Js41VZCZuO1XDUAbR7Z45uGbVXIZlVOhG+4Cv/nHKd94JRiLMFr61Px9lLeX16ZfQb7UGrL833rmRSy8kVlijuOmIDMClAMdWcmkZzM62jZYn7610WCVsd2l+AU=

@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     axios
-      .get('localhost:5000/api/Content')
+      .get('https://gentle-waters-43988.herokuapp.com/api/content')
       .then((res) => {
         this.skills = res;
       });
