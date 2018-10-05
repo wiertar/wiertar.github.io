@@ -52,15 +52,15 @@ body {
   flex-direction: column;
   text-align: center;
 
-  &__list {
-    &--item {
+  // &__list {
+  //   &--item {
 
-    }
-  }
+  //   }
+  // }
 
-  &__link {
-    
-  }
+  // &__link {
+
+  // }
 }
 
 #app {
