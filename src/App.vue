@@ -1,37 +1,42 @@
 <template>
-  <div id="app" class="outer">
-    <div class="inner">
-      <div class="heading">
-        <h1>Richard Wiertalla</h1>
-        <h3>Developer Portfolio</h3>
-        <ul class="heading__list">
-          <li class="heading__list--item"><a class="heading__link" href="https://github.com/wiertar"><i class="icon fab fa-github"></i>Github</a></li>
-          <li class="heading__list--item"><a class="heading__link" href="#"><i class="icon far fa-envelope"></i>Contact Me</a></li>
-        </ul>
+  <div id="app">
+    <div class="outer">
+      <div class="inner">
+        <div class="heading">
+          <h1>Richard Wiertalla</h1>
+          <h3>Developer Portfolio</h3>
+          <ul class="heading__list">
+            <li class="heading__list--item"><a class="heading__link" href="https://github.com/wiertar"><i class="icon fab fa-github"></i>Github</a></li>
+            <li class="heading__list--item"><a class="heading__link" href="#"><i class="icon far fa-envelope"></i>Contact Me</a></li>
+          </ul>
+        </div>
       </div>
+      <section class="content">
+        <div class="content--projects">
+          <h2>Projects</h2>
+          <ul class="projects__list">
+            <li class="projects__list--item">Project 1</li>
+            <li class="projects__list--item">Project 2</li>
+            <li class="projects__list--item">Project 3</li>
+            <li class="projects__list--item">Project 4</li>
+          </ul>
+        </div>
+        <div class="content--skills">
+          <h2>Skills</h2>
+          <ul class="skills__list">
+            <li class="skills__list--item">test<span>&#10003;</span></li>
+            <li class="skills__list--item">test</li>
+            <li class="skills__list--item">test</li>
+            <li class="skills__list--item">test</li>
+            <li class="skills__list--item">test</li>
+            <li class="skills__list--item">test</li>
+          </ul>
+        </div>
+      </section>
     </div>
-    <section class="content">
-      <div class="content--projects">
-        <h2>Projects</h2>
-        <ul class="projects__list">
-          <li class="projects__list--item">Project 1</li>
-          <li class="projects__list--item">Project 2</li>
-          <li class="projects__list--item">Project 3</li>
-          <li class="projects__list--item">Project 4</li>
-        </ul>
-      </div>
-      <div class="content--skills">
-        <h2>Skills</h2>
-        <ul class="skills__list">
-          <li class="skills__list--item">test<span>&#10003;</span></li>
-          <li class="skills__list--item">test</li>
-          <li class="skills__list--item">test</li>
-          <li class="skills__list--item">test</li>
-          <li class="skills__list--item">test</li>
-          <li class="skills__list--item">test</li>
-        </ul>
-      </div>
-    </section>
+    <footer>
+      <span>Made with Vue, Dotnet Core, Travis CI, Heroku, Github, and with lots of <i class="fas fa-heart"></i></span>
+    </footer>
   </div>
 </template>
 
@@ -76,6 +81,10 @@ h3 {
   margin-right: 8px;
 }
 
+.fa-heart {
+  color: red;
+}
+
 .u_serif {
   font-family: 'Rubik', sans-serif;
 }
@@ -83,6 +92,7 @@ h3 {
 .outer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .inner {
@@ -125,12 +135,14 @@ h3 {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5rem;
+
   &--projects {
    text-align: center; 
   }
   &--skills {
+    margin-top: 5rem;
     text-align: center;
   }
 }
@@ -163,6 +175,19 @@ h3 {
       border: 3px solid black;
     }
   }
+}
+
+footer {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #4c56a3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  height: 150px;
+  font-size: 1rem;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  text-align: center;
 }
 
 #app {
