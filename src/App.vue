@@ -11,6 +11,15 @@
       </div>
     </div>
     <section class="content">
+      <div class="content--projects">
+        <h2>Projects</h2>
+        <ul class="projects__list">
+          <li class="projects__list--item">Project 1</li>
+          <li class="projects__list--item">Project 2</li>
+          <li class="projects__list--item">Project 3</li>
+          <li class="projects__list--item">Project 4</li>
+        </ul>
+      </div>
       <div class="content--skills">
         <h2>Skills</h2>
         <ul class="skills__list">
@@ -20,15 +29,6 @@
           <li class="skills__list--item">test</li>
           <li class="skills__list--item">test</li>
           <li class="skills__list--item">test</li>
-        </ul>
-      </div>
-      <div class="content--projects">
-        <h2>Projects</h2>
-        <ul class="projects__list">
-          <li class="projects__list--item">Project 1</li>
-          <li class="projects__list--item">Project 2</li>
-          <li class="projects__list--item">Project 3</li>
-          <li class="projects__list--item">Project 4</li>
         </ul>
       </div>
     </section>
@@ -61,8 +61,7 @@ h1 {
   font-size: 3.5rem;
 }
 
-h2 {
-  color: aquamarine;
+h2 {color: teal;
   color: teal;
   font-size: 2.5rem;
 }
@@ -125,10 +124,14 @@ h3 {
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin-top: 3rem;
+  margin-top: 5rem;
   &--projects {
    text-align: center; 
+  }
+  &--skills {
+    text-align: center;
   }
 }
 
@@ -148,6 +151,8 @@ h3 {
 .projects {
   &__list {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 1rem;
     list-style-type: none;
     font-family: 'Rubik', sans-serif;
@@ -163,6 +168,5 @@ h3 {
 #app {
   height: 100vh;
   flex-direction: column;
-  
 }
 </style>
