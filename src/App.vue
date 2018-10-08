@@ -47,7 +47,7 @@
     <footer class="footer">
       <div class="footer__content">
         <span>
-          Made with Vue, .Net Core, Travis CI, Heroku, Github, and with lots of
+          Made with Vue, Node.js, Travis CI, Heroku, Github, and with lots of
           <i class="fas fa-heart"></i>
         </span>
       </div>
@@ -70,7 +70,7 @@ export default {
     axios
       .get('https://gentle-waters-43988.herokuapp.com/api/content')
       .then((res) => {
-        this.skills = res;
+        this.skills = res.data;
       });
   },
   components: {
