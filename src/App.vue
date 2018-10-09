@@ -25,21 +25,16 @@
         <div class="content--projects">
           <h2>Projects</h2>
           <ul class="projects__list">
-            <li class="projects__list--item">Project 1</li>
-            <li class="projects__list--item">Project 2</li>
-            <li class="projects__list--item">Project 3</li>
-            <li class="projects__list--item">Project 4</li>
+            <li class="projects__list--item" v-for="(project, index) in projects" :key="index">{{ project }}</li>
           </ul>
         </div>
         <div class="content--skills">
           <h2>Skills</h2>
           <ul class="skills__list">
-            <li class="skills__list--item">{{ skills }}<span>&#10003;</span></li>
-            <li class="skills__list--item">test</li>
-            <li class="skills__list--item">test</li>
-            <li class="skills__list--item">test</li>
-            <li class="skills__list--item">test</li>
-            <li class="skills__list--item">test</li>
+            <li class="skills__list--item" v-for="(skill, index) in skills" :key="index">
+              {{ skill }}
+              <span>&#10003;</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -70,7 +65,8 @@ export default {
     axios
       .get('https://gentle-waters-43988.herokuapp.com/')
       .then((res) => {
-        this.skills = res.data;
+        this.skills = res.data[0];
+        this.projects = res.data[1];
       });
   },
   components: {
