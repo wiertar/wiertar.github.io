@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="outer">
-      <div class="inner">
+    <div class="col">
+      <div class="row">
         <div class="heading">
           <h1>Richard Wiertalla</h1>
           <h3>Developer Portfolio</h3>
@@ -21,25 +21,26 @@
           </ul>
         </div>
       </div>
-      <section class="content">
-        <div class="content--projects">
-          <h2>Projects</h2>
-          <ul class="projects__list">
-            <li class="projects__list--item" v-for="(project, index) in projects" :key="index">{{ project }}</li>
-          </ul>
-        </div>
-        <div class="content--skills">
-          <h2>Skills</h2>
-          <ul class="skills__list">
-            <li class="skills__list--item" v-for="(skill, index) in skills" :key="index">
-              {{ skill }}
-              <span>&#10003;</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
-    <footer class="footer">
+      <div class="row">
+        <section class="content">
+          <div class="content--projects">
+            <h2>Projects</h2>
+            <ul class="projects__list">
+              <li class="projects__list--item" v-for="(project, index) in projects" :key="index">{{ project }}</li>
+            </ul>
+          </div>
+          <div class="content--skills">
+            <h2>Skills</h2>
+            <ul class="skills__list">
+              <li class="skills__list--item" v-for="(skill, index) in skills" :key="index">
+                {{ skill }}
+                <span>&#10003;</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
       <div class="footer__content">
         <span>
           Made with Vue, Node.js, Travis CI, Heroku, Github, and with lots of
@@ -47,6 +48,7 @@
         </span>
       </div>
     </footer>
+    </div>
   </div>
 </template>
 
@@ -65,8 +67,8 @@ export default {
     axios
       .get('https://gentle-waters-43988.herokuapp.com/')
       .then((res) => {
-        this.skills = res.data.skillsRes;
-        this.projects = res.data.projectsRes;
+        this.skills = res.data.skillsRes.skills;
+        this.projects = res.data.projectsRes.projects;
       });
   },
   components: {
@@ -92,13 +94,13 @@ h1 {
   font-size: 3.5rem;
 }
 
-h2 {color: teal;
-  color: teal;
+h2 {
+  color: forestgreen;
   font-size: 2.5rem;
 }
 
 h3 {
-  color: cornflowerblue;
+  color: dodgerblue;
   font-size: 2rem;
 }
 
@@ -115,15 +117,19 @@ h3 {
   font-family: 'Rubik', sans-serif;
 }
 
-.outer {
+.col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  min-height: 800px;
+  overflow-y: auto;
 }
 
-.inner {
+.row {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .heading {
@@ -144,13 +150,13 @@ h3 {
     font-size: 1.5rem;
     text-decoration: none;
     font-family: sans-serif;
-    border: 3px solid cornflowerblue;
+    border: 3px solid dodgerblue;
     border-radius: 5px;
     padding: .25rem 1rem;
     min-width: 10rem;
     display: inline-block;
     color: white;
-    background-color: cornflowerblue;
+    background-color: dodgerblue;
   }
 }
 
@@ -199,6 +205,7 @@ h3 {
 }
 
 .footer {
+  display: block;
   &__content {
     margin-top: 3rem;
     display: flex;
@@ -222,8 +229,14 @@ h3 {
   .heading {
     &__list {
       flex-direction: column;
+      margin-top: 1rem;
+      padding: 0;
+    }
+    &__list--item {
     }
     &__link {
+      margin: 1rem 0;
+      min-width: 75%;
     }
   }
 }
