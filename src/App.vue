@@ -67,8 +67,8 @@ export default {
     axios
       .get('https://gentle-waters-43988.herokuapp.com/')
       .then((res) => {
-        this.skills = res.data.skillsRes.skills;
-        this.projects = res.data.projectsRes.projects;
+        this.skills = res.data.skillsRes.Skills;
+        this.projects = res.data.projectsRes.Projects;
       });
   },
   components: {
