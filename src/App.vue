@@ -122,7 +122,7 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  min-height: 800px;
+  min-height: 1200px;
   overflow-y: auto;
 }
 
@@ -231,8 +231,6 @@ h3 {
       flex-direction: column;
       margin-top: 1rem;
       padding: 0;
-    }
-    &__list--item {
     }
     &__link {
       margin: 1rem 0;
