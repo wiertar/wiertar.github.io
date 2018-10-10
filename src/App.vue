@@ -129,8 +129,6 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  min-height: 1200px;
   overflow-y: auto;
 }
 
@@ -138,6 +136,10 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  
+  &:not(:first-child):not(:last-child) {
+    margin: 3rem 0;
+  }
 }
 
 .heading {
