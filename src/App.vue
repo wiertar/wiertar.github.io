@@ -44,7 +44,7 @@
           </div>
         </section>
       </div>
-      <footer class="footer">
+      <footer class="footer row">
       <div class="footer__content">
         <span>
           Made with Vue, Node.js, Travis CI, Heroku, Github, and with lots of
@@ -168,12 +168,10 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 3rem;
   &--projects {
    text-align: center;
   }
   &--skills {
-    margin-top: 3rem;
     text-align: center;
   }
 }
