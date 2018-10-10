@@ -39,7 +39,7 @@
             <h2>Skills</h2>
             <ul class="skills__list">
               <li class="skills__list--item" v-for="(skill, index) in skills" :key="index">
-                {{ skill }}
+                {{ skill.Name }}
                 <span>&#10003;</span>
               </li>
             </ul>
@@ -212,7 +212,7 @@ h3 {
 .footer {
   display: block;
   &__content {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     background-color: #4c56a3;
