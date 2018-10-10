@@ -28,7 +28,7 @@
           <div class="content--projects">
             <h2>Projects</h2>
             <ul class="projects__list">
-              <li class="projects__list--item" v-for="(project, index) in projects" :key="index" :class="{background: url(project.ImgBase64)}">
+              <li class="projects__list--item" v-for="(project, index) in projects" :key="index" :style="{backgroundImage: `url(${project.ImgBase64})`}">
                 {{ project.Name }}
                 </li>
             </ul>
