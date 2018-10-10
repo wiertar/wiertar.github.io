@@ -29,6 +29,10 @@
               <li class="projects__list--item" v-for="(project, index) in projects" :key="index">{{ project }}</li>
             </ul>
           </div>
+        </section>
+      </div>
+      <div class="row">
+        <section class="content">
           <div class="content--skills">
             <h2>Skills</h2>
             <ul class="skills__list">
