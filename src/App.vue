@@ -28,7 +28,9 @@
           <div class="content--projects">
             <h2>Projects</h2>
             <ul class="projects__list">
-              <li class="projects__list--item" v-for="(project, index) in projects" :key="index">{{ project }}</li>
+              <li class="projects__list--item" v-for="(project, index) in projects" :key="index">
+                {{ project.Name }}
+                </li>
             </ul>
           </div>
         </section>
@@ -39,7 +41,7 @@
             <h2>Skills</h2>
             <ul class="skills__list">
               <li class="skills__list--item" v-for="(skill, index) in skills" :key="index">
-                {{ skill.Name }}
+                {{ skill }}
                 <span>&#10003;</span>
               </li>
             </ul>
