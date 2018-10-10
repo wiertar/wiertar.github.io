@@ -3,8 +3,10 @@
     <div class="col">
       <div class="row">
         <div class="heading">
-          <h1>Richard Wiertalla</h1>
-          <h3>Developer Portfolio</h3>
+          <div class="heading__text">
+            <h1>Richard Wiertalla</h1>
+            <h3>Developer Portfolio</h3>
+          </div>
           <ul class="heading__list">
             <li class="heading__list--item">
               <a class="heading__link" href="https://github.com/wiertar">
@@ -142,20 +144,21 @@ h3 {
   flex-direction: column;
   text-align: center;
   width: inherit;
+  &__text {
+    border-bottom: 5px dashed black;
+    padding-bottom: 1rem;
+  }
   &__list {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    border-top: 5px dashed black;
-    margin-top: 1rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
   &__link {
     font-size: 1.5rem;
     text-decoration: none;
     font-family: sans-serif;
     border: 3px solid dodgerblue;
-    border-radius: 5px;
     padding: .25rem 1rem;
     min-width: 10rem;
     display: inline-block;
@@ -227,7 +230,10 @@ h3 {
   }
 }
 
-@media (max-width: 364px) {
+@media (max-width: 400px) {
+  body {
+    font-size: 1.5%;
+  }
   .heading {
     &__list {
       flex-direction: column;
@@ -243,6 +249,5 @@ h3 {
 
 #app {
   height: 100vh;
-  flex-direction: column;
 }
 </style>
