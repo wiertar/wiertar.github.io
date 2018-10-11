@@ -30,6 +30,7 @@
             <ul class="projects__list">
               <li class="projects__list--item" v-for="(project, index) in projects" :key="index" :style="{backgroundImage: `url(${project.ImgBase64})`}">
                 {{ project.Name }}
+                <modal :pData="project" ref="doModal" @click="doModal"></modal>
                 </li>
             </ul>
           </div>
@@ -62,6 +63,7 @@
 
 <script>
 import axios from 'axios';
+import modal from '@/components/Modal';
 
 export default {
   name: 'app',
@@ -69,6 +71,7 @@ export default {
     return {
       projects: null,
       skills: null,
+      showModal: false
     };
   },
   mounted() {
@@ -80,6 +83,7 @@ export default {
       });
   },
   components: {
+    modal
   },
 };
 </script>
@@ -89,6 +93,11 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#app, html, .col {
+  height: 100vh;
+  min-height: 800px;
 }
 
 body {
@@ -249,9 +258,5 @@ h3 {
       min-width: 75%;
     }
   }
-}
-
-#app {
-  height: 100vh;
 }
 </style>
