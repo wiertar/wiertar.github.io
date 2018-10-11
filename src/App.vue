@@ -30,7 +30,7 @@
             <ul class="projects__list">
               <li class="projects__list--item" v-for="(project, index) in projects" :key="index" :style="{backgroundImage: `url(${project.ImgBase64})`}">
                 {{ project.Name }}
-                <modal :pData="project" ref="doModal" @click="doModal"></modal>
+                <modal :pData="getProjectDetailsForModal(project)" ref="doModal" @click="doModal"></modal>
                 </li>
             </ul>
           </div>
@@ -73,6 +73,20 @@ export default {
       skills: null,
       showModal: false
     };
+  },
+  computed: {
+    getProjectDetailsForModal: function(project) {
+      const {
+        Name,
+        About,
+        Technologies
+      } = project;
+      return {
+        Name,
+        About,
+        Technologies
+      }
+    }
   },
   mounted() {
     axios
