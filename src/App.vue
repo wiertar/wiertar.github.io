@@ -28,10 +28,14 @@
           <div class="content--projects">
             <h2>Projects</h2>
             <ul class="projects__list">
-              <li class="projects__list--item" v-for="(project, index) in projects" :key="index" :style="{backgroundImage: `url(${project.ImgBase64})`}">
-                {{ project.Name }}
-                <modal :pData="getProjectDetailsForModal(project)" ref="doModal" @click="doModal"></modal>
+              <li class="projects__list--item" 
+                v-for="(project, index) in projects" 
+                :key="index" 
+                :style="{backgroundImage: `url(${project.ImgBase64})`}"
+                @click="getSelectedProject(index)">
+                  {{ project.Name }}
                 </li>
+                <modal :pData="currentSelectedProject" :display="showModal" :toggleModalFunction="doModal"></modal>
             </ul>
           </div>
         </section>
@@ -71,10 +75,19 @@ export default {
     return {
       projects: null,
       skills: null,
-      showModal: false
+      showModal: false,
+      currentSelectedProject: null
     };
   },
-  computed: {
+  methods: {
+    doModal: function() {
+      this.showModal = !this.showModal;
+    },
+    getSelectedProject: function(index) {
+      const selectedProject = this.projects[index];
+      this.currentSelectedProject = selectedProject;
+      this.doModal();
+    },
     getProjectDetailsForModal: function(project) {
       const {
         Name,
@@ -152,17 +165,12 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
 }
 
 .row {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  
-  &:not(:first-child):not(:last-child) {
-    margin: 3rem 0;
-  }
 }
 
 .heading {
@@ -198,8 +206,9 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 4rem 0;
   &--projects {
-   text-align: center;
+    text-align: center;
   }
   &--skills {
     text-align: center;
@@ -228,10 +237,13 @@ h3 {
     list-style-type: none;
     font-family: 'Rubik', sans-serif;
     &--item {
+      width: 20rem;
+      height: 15rem;
       font-size: 1rem;
       padding: 5rem;
       margin: .5rem;
       border: 3px solid black;
+      cursor: pointer;
     }
   }
 }

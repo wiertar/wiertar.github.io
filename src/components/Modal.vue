@@ -1,12 +1,21 @@
 <template>
     <div>
-        <div class="modal__outside" :style="getCss" @click="doModal">
+        <div class="modal__outside" :style="getCss" @click="toggleModalFunction">
         
         </div>
         <div class="modal">
             <div class="modal__details" :style="getCss">
-                <span class="modal__button modal__button--exit" @click="doModal">X</span>
-                {{ pData }}
+                <span class="modal__button modal__button--exit" @click="toggleModalFunction">X</span>
+                <div class="modal__header">
+                    <span>Name: </span>{{ pData.Name }}
+                </div>
+                <div class="modal__content">
+                    <span>About: </span>{{ pData.About }}
+                </div>
+                <div class="modal__content">
+                    <span>Technologies: </span>{{ pData.Technologies }}
+                </div>
+                <div lcass="modal__footer"></div>
             </div>
         </div>
     </div>
@@ -14,32 +23,29 @@
 <script>
 export default {
     props: [
-        'pData'
+        'pData',
+        'display',
+        'toggleModalFunction'
     ],
     data: function() {
         return {
-            display: true,
+            data: null
         }
     },
     methods: {
-        doModal: function() {
-            this.display = !this.display;
-        }  
+        // doModal: function() {
+        //     this.display = !this.display;
+        // }  
     },
     computed: {
         getCss: function() {
             return this.display ? "display: block" : "display: none";
         },
-        display: function() {
-            return this.display;
-        }
+        // display: function() {
+        //     return this.display;
+        // }
     },
     mounted() {
-        console.log('here!');
-        setInterval(function() {
-            if (this.display === false)
-                this.display = true;
-        }, 5000);
     }
 }
 </script>
@@ -93,9 +99,9 @@ export default {
 }
 
 .modal {
-    width: 0;
-    height: 0;
     &__details {
+        text-align: left;
+        justify-content: space-between;
         position: fixed;
         z-index: 200;
         top: 50%;
@@ -107,8 +113,17 @@ export default {
         font-size: 2rem;
         min-width: 12rem;
         min-height: 12rem;
-        width: 45%;
-        height: 45%;
+        width: 75%;
+        height: auto;
+        font-size: 1rem;
+    }
+    &__header, &__content, &__footer {
+        width: 100%;
+        margin: 1rem 0;
+        color: dimgrey;
+        span {
+            color: black;
+        }
     }
     &__button {
         display: flex;
