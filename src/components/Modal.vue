@@ -27,25 +27,10 @@ export default {
         'display',
         'toggleModalFunction'
     ],
-    data: function() {
-        return {
-            data: null
-        }
-    },
-    methods: {
-        // doModal: function() {
-        //     this.display = !this.display;
-        // }  
-    },
     computed: {
         getCss: function() {
             return this.display ? "display: block" : "display: none";
         },
-        // display: function() {
-        //     return this.display;
-        // }
-    },
-    mounted() {
     }
 }
 </script>
@@ -100,6 +85,7 @@ export default {
 
 .modal {
     &__details {
+        display: flex;
         text-align: left;
         justify-content: space-between;
         position: fixed;

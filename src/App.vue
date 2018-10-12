@@ -35,7 +35,7 @@
                 @click="getSelectedProject(index)">
                   {{ project.Name }}
                 </li>
-                <modal :pData="currentSelectedProject" :display="showModal" :toggleModalFunction="doModal"></modal>
+                <modal v-if="currentSelectedProject" :pData="currentSelectedProject" :display="showModal" :toggleModalFunction="doModal"></modal>
             </ul>
           </div>
         </section>
@@ -101,7 +101,7 @@ export default {
       }
     }
   },
-  mounted() {
+  beforeCreate: function() {
     axios
       .get('https://gentle-waters-43988.herokuapp.com/')
       .then((res) => {
@@ -206,7 +206,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 4rem 0;
+  margin: 4rem;
   &--projects {
     text-align: center;
   }
